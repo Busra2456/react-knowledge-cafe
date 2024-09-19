@@ -11,7 +11,7 @@ function App() {
     
       
      <Header></Header> 
-     <div className='md:flex' ><Blogs></Blogs>
+     <div className='md:flex max-w-7xl mx-auto' ><Blogs></Blogs>
      <Bookmarked></Bookmarked>
      
      </div>
