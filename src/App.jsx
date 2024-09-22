@@ -2,6 +2,7 @@ import { useState } from "react"
 import Blogs from "./components/Blogs/Blogs"
 import Bookmarked from "./components/Bookmarked/Bookmarked"
 import Header from "./components/Header/Header"
+import Bookmark from "./components/Bookmark/Bookmark";
 
 function App() {
   const [bookmarked,setBookmarked] = useState([]);
@@ -13,9 +14,16 @@ function App() {
     setBookmarked(newBookmarks)
   }
 
-  const handleMarkAsRead = time =>{
+  const handleMarkAsRead = (id,time) =>{
    const newReadingTime = readingTime + time;
    setReadingTime(newReadingTime)
+
+   //remove the read blog from bookmark
+
+  //  console.log('remove bookmark',id)
+  const remainingBookmarks = bookmarked.filter(bookmark => bookmark.id !==id);
+  setBookmarked(remainingBookmarks);
+
 
   }
 
